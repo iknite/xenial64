@@ -1,4 +1,4 @@
-.PHONY: build docker vagrant
+.PHONY: build docker vagrant clean
 .DEFAULT_GOAL := build
 
 guard-%:
@@ -23,9 +23,9 @@ build:  build/docker/rootfs.tar.xz \
 docker: build/docker/rootfs.tar.xz guard-VERSION
 	@docker build -t iknite/xenial64:${VERSION} build/docker
 
-vagrant:
+vagrant: build/vagrant/xenial64_virtualbox.box
 	@cd build/vagrant && vagrant box add metadata.json
 
-clean: 
+clean:
 	@rm -f build/vagrant/xenial64_*.box build/docker/rootfs*
 
