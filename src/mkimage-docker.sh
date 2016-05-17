@@ -2,7 +2,7 @@
 # Based on github.com/docker/docker/contrig/mkimage.sh
 set -e
 
-suite=trusty
+suite=xenial
 dir="build/docker"
 rootfsDir="$dir/rootfs"
 ( set -x; mkdir -p "$rootfsDir" )
@@ -83,6 +83,7 @@ cat > "$rootfsDir/etc/resolv.conf" <<'EOF'
 nameserver 8.8.8.8
 nameserver 8.8.4.4
 EOF
+
 
 tarFile="$dir/rootfs.tar.xz"
 touch "$tarFile"

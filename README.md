@@ -1,4 +1,4 @@
-Trusty64 images
+Xenial64 images
 ===============
 
 
@@ -6,8 +6,8 @@ Simple Base images for a true minimal Ubuntu 14.04.2 64Bits
 
 This is the source files for: 
 
-* `iknite/trusty64` in [atlas](//atlas.hashicorp.com/iknite/boxes/trusty64) in both `libvirt` and `virtualbox` (for now)
-* `iknite/trusty64` in [docker hub](//hub.docker.com/u/iknite/trusty64)
+* `iknite/xenial64` in [atlas](//atlas.hashicorp.com/iknite/boxes/xenial64) in both `libvirt` and `virtualbox` (for now)
+* `iknite/xenial64` in [docker hub](//hub.docker.com/u/iknite/xenial64)
 
 Rationale
 ---------
@@ -56,7 +56,7 @@ Running `packer build -parallel=false src/packer.json` will succesfuly build.
   iso_url           = http://releases.ubuntu.com/14.04.2/ubuntu-14.04.2-server-amd64.iso
   ssh_password      = vagrant
   ssh_username      = vagrant
-  vm_name           = trusty64
+  vm_name           = xenial64
 ```
 
 #### Builders:
