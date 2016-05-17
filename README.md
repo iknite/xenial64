@@ -2,7 +2,7 @@ Xenial64 images
 ===============
 
 
-Simple Base images for a true minimal Ubuntu 14.04.2 64Bits
+Simple Base images for a true minimal Ubuntu 16.04 64Bits
 
 This is the source files for: 
 
@@ -51,9 +51,9 @@ Running `packer build -parallel=false src/packer.json` will succesfuly build.
 #### Optional variables and their defaults:
 
 ```
-  iso_checksum      = 83aabd8dcf1e8f469f3c72fff2375195
+  iso_checksum      = c94d54942a2954cf852884d656224186
   iso_checksum_type = md5
-  iso_url           = http://releases.ubuntu.com/14.04.2/ubuntu-14.04.2-server-amd64.iso
+  iso_url           = http://releases.ubuntu.com/16.04/ubuntu-16.04-server-amd64.iso
   ssh_password      = vagrant
   ssh_username      = vagrant
   vm_name           = xenial64

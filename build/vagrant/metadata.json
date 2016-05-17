@@ -1,6 +1,6 @@
 {
     "name": "iknite/xenial64",
-    "description": "Ubuntu 14.04.1 64Bits",
+    "description": "Ubuntu 16.04 64Bits",
     "baseurl": "xenial64.box",
     "versions": [
         {
