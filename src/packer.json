@@ -24,7 +24,7 @@
             "ssh_username": "{{ user `ssh_username`}}",
             "ssh_password": "{{ user `ssh_password`}}",
             "shutdown_command": "echo '{{ user `ssh_password`}}' | sudo -E -S shutdown -P now",
-            "boot_wait": "5s",
+            "boot_wait": "10s",
             "virtualbox_version_file": ".vbox_version",
             "guest_additions_mode": "disable",
             "vboxmanage": [
@@ -32,8 +32,12 @@
                 [ "modifyvm", "{{.Name}}", "--cpus", "1" ]
             ],
             "boot_command": [
-                "<esc><esc><enter><wait>",
-                "/install/vmlinuz initrd=/install/initrd.gz noapic ",
+                "<enter><wait><f6><esc><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+                "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+                "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+                "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+                "/install/vmlinuz initrd=/install/initrd.gz ",
+                "noapic ",
                 "preseed/file=/cdrom/preseed/ubuntu-server-minimalvm.seed ",
                 "ks=http://{{.HTTPIP}}:{{.HTTPPort}}/kickstart.cfg ",
                 "auto ", 
@@ -64,11 +68,14 @@
             "ssh_username": "{{ user `ssh_username`}}",
             "ssh_password": "{{ user `ssh_password`}}",
             "shutdown_command": "echo '{{ user `ssh_password`}}' | sudo -E -S shutdown -P now",
-            "boot_wait": "5s",
+            "boot_wait": "10s",
             "net_device": "virtio-net",
             "disk_interface": "virtio",
             "boot_command": [
-                "<esc><esc><enter><wait>",
+                "<enter><wait><f6><esc><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+                "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+                "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+                "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
                 "/install/vmlinuz initrd=/install/initrd.gz noapic ",
                 "preseed/file=/cdrom/preseed/ubuntu-server-minimalvm.seed ",
                 "ks=http://{{.HTTPIP}}:{{.HTTPPort}}/kickstart.cfg ",
@@ -98,7 +105,6 @@
             "script": "src/provision/update.sh"
         },
         { 
-            "pause_before": "15s",
             "type": "shell",
             "execute_command": "echo '{{ user `ssh_password`}}' | sudo -E -S sh '{{ .Path }}'",
             "script": "src/provision/install-vagrant.sh"
