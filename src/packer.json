@@ -126,7 +126,7 @@
         {
             "type": "vagrant",
             "output": "build/vagrant/xenial64_{{.Provider}}.box",
-            "compression_level": 0
+            "compression_level": 9
         }
     ]
 }
