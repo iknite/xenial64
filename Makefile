@@ -27,5 +27,5 @@ vagrant: build/vagrant/xenial64_virtualbox.box
 	@cd build/vagrant && vagrant box add metadata.json --force
 
 clean:
-	@rm -f build/vagrant/xenial64_*.box build/docker/rootfs*
+	-@sudo rm -rf build/vagrant/xenial64_*.box build/docker/rootfs*
 
