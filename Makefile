@@ -24,7 +24,7 @@ docker: build/docker/rootfs.tar.xz guard-VERSION
 	@docker build -t iknite/xenial64:${VERSION} build/docker
 
 vagrant: build/vagrant/xenial64_virtualbox.box
-	@cd build/vagrant && vagrant box add metadata.json
+	@cd build/vagrant && vagrant box add metadata.json --force
 
 clean:
 	@rm -f build/vagrant/xenial64_*.box build/docker/rootfs*
