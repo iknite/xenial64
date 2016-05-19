@@ -115,6 +115,11 @@
             "execute_command": "echo '{{ user `ssh_password`}}' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
             "script": "src/provision/install-virtualbox.sh",
             "only":["virtualbox-iso"]
+        },
+        {
+            "type": "shell",
+            "execute_command": "echo '{{ user `ssh_password`}}' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
+            "script": "src/provision/cleanup.sh"
         }
     ],
     "post-processors": [
