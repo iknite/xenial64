@@ -2,7 +2,7 @@ Xenial64 images
 ===============
 
 Simple Base images for a true minimal Ubuntu 16.04 64Bits
-(version: 0.1.0)
+(version: 0.1.1)
 
 
 This is the source files for: 

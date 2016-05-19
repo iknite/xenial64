@@ -4,7 +4,7 @@
     "baseurl": "xenial64.box",
     "versions": [
         {
-            "version": "0.1.0",
+            "version": "0.1.1",
                 "providers": [
                 {
                     "name": "virtualbox",
