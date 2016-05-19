@@ -105,6 +105,7 @@
             "script": "src/provision/update.sh"
         },
         { 
+            "start_retry_timeout": "1m",
             "type": "shell",
             "execute_command": "echo '{{ user `ssh_password`}}' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
             "script": "src/provision/install-vagrant.sh"
