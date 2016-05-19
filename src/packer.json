@@ -101,17 +101,17 @@
         },
         { 
             "type": "shell",
-            "execute_command": "echo '{{ user `ssh_password`}}' | sudo -E -S sh '{{ .Path }}'",
+            "execute_command": "echo '{{ user `ssh_password`}}' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
             "script": "src/provision/update.sh"
         },
         { 
             "type": "shell",
-            "execute_command": "echo '{{ user `ssh_password`}}' | sudo -E -S sh '{{ .Path }}'",
+            "execute_command": "echo '{{ user `ssh_password`}}' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
             "script": "src/provision/install-vagrant.sh"
         },
         {
             "type": "shell",
-            "execute_command": "echo '{{ user `ssh_password`}}' | sudo -E -S sh '{{ .Path }}'",
+            "execute_command": "echo '{{ user `ssh_password`}}' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
             "script": "src/provision/install-virtualbox.sh",
             "only":["virtualbox-iso"]
         }
